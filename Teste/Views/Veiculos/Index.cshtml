@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Teste.Models.Veiculo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de veículos</h2>
+<table class="table">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bloqueado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Placa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Renavam)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bloqueado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Placa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Renavam)
+        </td>
+        <td> 
+            @Html.ActionLink("Editar", "Edit", new { id = item.IdVeiculo }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.IdVeiculo }) |
+            @Html.ActionLink("Apagar", "Delete", new { id = item.IdVeiculo })
+        </td>
+    </tr>
+}
+</table>
+<p>
+    <button onclick="location.href='@Url.Action("Create")';return false;">Cadastrar Veículos</button>
+</p>

@@ -1,0 +1,59 @@
+﻿@model Teste.Models.Veiculo
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Visualizar dados</h2>
+
+<div>
+    <hr />
+    <dl class="form-horizontal" style="margin-left: 0">
+        <dt>
+            @Html.DisplayNameFor(model => model.Placa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Renavam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Renavam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bloqueado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bloqueado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button onclick="location.href='@Url.Action("Edit", new { id = Model.IdVeiculo })';return false;">Editar</button>
+
+    <button onclick="location.href='@Url.Action("Index")';return false;">Retornar para a listagem</button>
+</p>
