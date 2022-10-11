@@ -59,7 +59,7 @@
 }
 
 <div>
-    @Html.ActionLink("Retornar para a listagem", "Index")
+    <button onclick="location.href='@Url.Action("Index")';return false;">Retornar para a listagem</button>
 </div>
 
 @section Scripts {
